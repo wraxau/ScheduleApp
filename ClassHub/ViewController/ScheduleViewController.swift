@@ -87,6 +87,14 @@ final class ScheduleViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        for family in UIFont.familyNames {
+            print("Font family: \(family)")
+            for font in UIFont.fontNames(forFamilyName: family) {
+                print("    \(font)")
+            }
+        }
+        
         view.backgroundColor = .systemBackground
         
         setupHierarchy()
@@ -197,12 +205,14 @@ final class ScheduleViewController: UIViewController {
             }
         }
         
-        guard let day = scheduleData[selectedDate], !day.items.isEmpty else {
-            showEmptyState()
-            return
-        }
-        
-        contentStackView.isHidden = false
+        let calendar = Calendar.current
+        let startOfSelectedDay = calendar.startOfDay(for: selectedDate)
+        guard let day = scheduleData[startOfSelectedDay], !day.items.isEmpty else {
+                    showEmptyState()
+                    return
+                }
+                
+                contentStackView.isHidden = false
         
         for item in day.items {
             let card = ClassCardView(item: item)
@@ -307,7 +317,11 @@ extension ScheduleViewController {
     static func makeTitleLabel() -> UILabel {
         let label = UILabel()
         label.text = "Расписание"
-        label.font = .systemFont(ofSize: 34, weight: .bold)
+        if let customFont = UIFont(name: "DelaGothicOne-Regular", size: 34) {
+            label.font = customFont
+        } else {
+            label.font = UIFont.systemFont(ofSize: 34, weight: .bold)
+        }
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }

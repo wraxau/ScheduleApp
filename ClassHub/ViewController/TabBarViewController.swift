@@ -54,7 +54,7 @@ class TabBarViewController: UIViewController {
     }()
 
     private let tabBarItems: [(title: String, icon: String, selectedIcon: String)] = [
-        ("Расписание", "calendar", "calendar.fill"),
+        ("Расписание", "calendar", "calendar"),
         ("Мой профиль", "person", "person.fill")
     ]
 
@@ -81,7 +81,7 @@ class TabBarViewController: UIViewController {
         let scheduleButton = createTabButton(
             title: "Расписание",
             icon: "calendar",
-            selectedIcon: "calendar.fill",
+            selectedIcon: "calendar",
             index: 0
         )
         

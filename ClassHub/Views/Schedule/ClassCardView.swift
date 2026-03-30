@@ -165,7 +165,10 @@ final class ClassCardView: UIView {
         roomLabel.text = item.room
         
         subjectLabel.text = item.subject
-        teacherLabel.text = item.teacher
+        if item.isReplacement {
+            teacherLabel.text = "замена: \(item.teacher)"
+        } else {
+            teacherLabel.text = item.teacher
+        }
     }
 }
-
