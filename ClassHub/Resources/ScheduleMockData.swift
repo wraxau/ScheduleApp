@@ -25,6 +25,7 @@ enum ScheduleMockData {
         return scheduleData
     }
     
+    // Где-то данные могут быть немного кривыми, что написано онлайн, при это открывается аудитория, поправю чуть позже
     private static func getItemsForDay(offset: Int, weekday: Int) -> [ScheduleItem] {
         switch offset {
         case 0:
@@ -39,7 +40,13 @@ enum ScheduleMockData {
                     room: "Онлайн",
                     breakAfter: "Перерыв 15 мин",
                     breakEndTime: "12.00",
-                    isReplacement: false
+                    isReplacement: false,
+                    topic: "История права и международные нормы",
+                    description: "На занятии разберем основные принципы международного права, историю их формирования и применение в современных реалиях. Подготовьте конспект лекции за прошлую неделю.",
+                    meetingLink: "https://meet.google.com/abc-defg-hij",
+                    meetingServiceName: "Google Meet",
+                    buildingInfo: nil,
+                    isCancelled: false
                 ),
                 ScheduleItem(
                     number: 2,
@@ -48,10 +55,16 @@ enum ScheduleMockData {
                     endTime: "13:45",
                     subject: "Государственное регулирование конституционной деятельности",
                     teacher: "Михайлов Иван Дмитриевич",
-                    room: "405",
+                    room: "Онлайн",
                     breakAfter: "Перерыв 1.15 мин",
                     breakEndTime: "15.00",
-                    isReplacement: true
+                    isReplacement: true,
+                    topic: "История права и международные нормы",
+                    description: "На занятии разберем основные принципы международного права, историю их формирования и применение в современных реалиях. Подготовьте конспект лекции за прошлую неделю.",
+                    meetingLink: "https://meet.google.com/abc-defg-hij",
+                    meetingServiceName: "Zoom",
+                    buildingInfo: nil,
+                    isCancelled: false
                 ),
                 ScheduleItem(
                     number: 3,
@@ -60,10 +73,16 @@ enum ScheduleMockData {
                     endTime: "16:45",
                     subject: "Теория вероятностей",
                     teacher: "Смирнов Алексей Иванович",
-                    room: "12б",
+                    room: "Онлайн",
                     breakAfter: nil,
                     breakEndTime: nil,
-                    isReplacement: false
+                    isReplacement: false,
+                    topic: "История права и международные нормы",
+                    description: "На занятии разберем основные принципы международного права, историю их формирования и применение в современных реалиях. Подготовьте конспект лекции за прошлую неделю.",
+                    meetingLink: "https://meet.google.com/abc-defg-hij",
+                    meetingServiceName: "Zoom",
+                    buildingInfo: nil,
+                    isCancelled: false
                 ),
                 
                 ScheduleItem(
@@ -73,10 +92,16 @@ enum ScheduleMockData {
                     endTime: "18:15",
                     subject: "Архитектура ОС",
                     teacher: "Смирнов Алексей Иванович",
-                    room: "12б",
+                    room: "Онлайн",
                     breakAfter: nil,
                     breakEndTime: nil,
-                    isReplacement: false
+                    isReplacement: false,
+                    topic: "История права и международные нормы",
+                    description: "На занятии разберем основные принципы международного права, историю их формирования и применение в современных реалиях. Подготовьте конспект лекции за прошлую неделю.",
+                    meetingLink: "https://meet.google.com/abc-defg-hij",
+                    meetingServiceName: "Телемост",
+                    buildingInfo: nil,
+                    isCancelled: true
                 )
             ]
         case 1:
@@ -88,10 +113,16 @@ enum ScheduleMockData {
                     endTime: "11:45",
                     subject: "Международное право",
                     teacher: "Иванов Иван Иванович",
-                    room: "Онлайн",
+                    room: "302",
                     breakAfter: "Перерыв 15 мин",
                     breakEndTime: "12.00",
-                    isReplacement: false
+                    isReplacement: false,
+                    topic: "История права и международные нормы",
+                    description: "На занятии разберем основные принципы международного права, историю их формирования и применение в современных реалиях. Подготовьте конспект лекции за прошлую неделю.",
+                    meetingLink: nil,
+                    meetingServiceName: nil,
+                    buildingInfo: "Корпус 1, этаж 3",
+                    isCancelled: false
                 ),
                 ScheduleItem(
                     number: 2,
@@ -103,7 +134,13 @@ enum ScheduleMockData {
                     room: "405",
                     breakAfter: "Перерыв 1.15 мин",
                     breakEndTime: "15.00",
-                    isReplacement: true
+                    isReplacement: true,
+                    topic: "История права и международные нормы",
+                    description: "На занятии разберем основные принципы международного права, историю их формирования и применение в современных реалиях. Подготовьте конспект лекции за прошлую неделю.",
+                    meetingLink: nil,
+                    meetingServiceName: nil,
+                    buildingInfo: "Корпус 1, этаж 4",
+                    isCancelled: false
                 ),
                 ScheduleItem(
                     number: 3,
@@ -115,7 +152,13 @@ enum ScheduleMockData {
                     room: "12б",
                     breakAfter: nil,
                     breakEndTime: nil,
-                    isReplacement: false
+                    isReplacement: false,
+                    topic: "Комбинаторика",
+                    description: "Будем решать задачи на комбинаторику. Рассмотрим задачи на перестановки, сочетания и размещения.",
+                    meetingLink: nil,
+                    meetingServiceName: nil,
+                    buildingInfo: "Корпус 1, 1 этаж",
+                    isCancelled: true
                 ),
                 
                 ScheduleItem(
@@ -125,10 +168,16 @@ enum ScheduleMockData {
                     endTime: "18:15",
                     subject: "Архитектура ОС",
                     teacher: "Смирнов Алексей Иванович",
-                    room: "12б",
+                    room: "120",
                     breakAfter: nil,
                     breakEndTime: nil,
-                    isReplacement: false
+                    isReplacement: false,
+                    topic: "Docker-контейнеры",
+                    description: "На занятии рассмотрим как работать с Docker",
+                    meetingLink: nil,
+                    meetingServiceName: nil,
+                    buildingInfo: "Корпус 5, этаж 1",
+                    isCancelled: false
                 )
             ]
         case 2:
@@ -143,7 +192,13 @@ enum ScheduleMockData {
                     room: "Онлайн",
                     breakAfter: "Перерыв 10 мин",
                     breakEndTime: "09.30",
-                    isReplacement: false
+                    isReplacement: false,
+                    topic: "Макеты мобильных приложений",
+                    description: "На занятии рассмотрим пример построения макетов для мобильных приложений.",
+                    meetingLink: "https://meet.google.com/abc-defg-hij",
+                    meetingServiceName: "Google Meet",
+                    buildingInfo: nil,
+                    isCancelled: false
                 ),
                 ScheduleItem(
                     number: 2,
@@ -155,7 +210,13 @@ enum ScheduleMockData {
                     room: "202",
                     breakAfter: nil,
                     breakEndTime: nil,
-                    isReplacement: true
+                    isReplacement: true,
+                    topic: "История права и международные нормы",
+                    description: "На занятии разберем основные принципы международного права, историю их формирования и применение в современных реалиях. Подготовьте конспект лекции за прошлую неделю.",
+                    meetingLink: "https://meet.google.com/abc-defg-hij",
+                    meetingServiceName: "Google Meet",
+                    buildingInfo: nil,
+                    isCancelled: false
                 ),
             ]
             
@@ -171,7 +232,13 @@ enum ScheduleMockData {
                     room: "Онлайн",
                     breakAfter: "Перерыв 20 мин",
                     breakEndTime: "14.40",
-                    isReplacement: false
+                    isReplacement: false,
+                    topic: "История права и международные нормы",
+                    description: "На занятии разберем основные принципы международного права, историю их формирования и применение в современных реалиях. Подготовьте конспект лекции за прошлую неделю.",
+                    meetingLink: "https://meet.google.com/abc-defg-hij",
+                    meetingServiceName: "Google Meet",
+                    buildingInfo: nil,
+                    isCancelled: false
                 ),
                 ScheduleItem(
                     number: 2,
@@ -183,7 +250,13 @@ enum ScheduleMockData {
                     room: "104",
                     breakAfter: "Перерыв 20 мин",
                     breakEndTime: "16.20",
-                    isReplacement: false
+                    isReplacement: false,
+                    topic: "История права и международные нормы",
+                    description: "На занятии разберем основные принципы международного права, историю их формирования и применение в современных реалиях. Подготовьте конспект лекции за прошлую неделю.",
+                    meetingLink: "https://meet.google.com/abc-defg-hij",
+                    meetingServiceName: "Google Meet",
+                    buildingInfo: nil,
+                    isCancelled: false
                 ),
                 ScheduleItem(
                     number: 3,
@@ -195,7 +268,13 @@ enum ScheduleMockData {
                     room: "12б",
                     breakAfter: nil,
                     breakEndTime: nil,
-                    isReplacement: false
+                    isReplacement: false,
+                    topic: "История права и международные нормы",
+                    description: "На занятии разберем основные принципы международного права, историю их формирования и применение в современных реалиях. Подготовьте конспект лекции за прошлую неделю.",
+                    meetingLink: "https://meet.google.com/abc-defg-hij",
+                    meetingServiceName: "Google Meet",
+                    buildingInfo: nil,
+                    isCancelled: false
                 ),
                 
                 ScheduleItem(
@@ -208,7 +287,13 @@ enum ScheduleMockData {
                     room: "12б",
                     breakAfter: nil,
                     breakEndTime: nil,
-                    isReplacement: false
+                    isReplacement: false,
+                    topic: "История права и международные нормы",
+                    description: "На занятии разберем основные принципы международного права, историю их формирования и применение в современных реалиях. Подготовьте конспект лекции за прошлую неделю.",
+                    meetingLink: "https://meet.google.com/abc-defg-hij",
+                    meetingServiceName: "Google Meet",
+                    buildingInfo: nil,
+                    isCancelled: false
                 )
             ]
             
@@ -224,7 +309,13 @@ enum ScheduleMockData {
                     room: "Онлайн",
                     breakAfter: "Перерыв 30 мин",
                     breakEndTime: "13.00",
-                    isReplacement: true
+                    isReplacement: true,
+                    topic: "История права и международные нормы",
+                    description: "На занятии разберем основные принципы международного права, историю их формирования и применение в современных реалиях. Подготовьте конспект лекции за прошлую неделю.",
+                    meetingLink: "https://meet.google.com/abc-defg-hij",
+                    meetingServiceName: "Google Meet",
+                    buildingInfo: nil,
+                    isCancelled: false
                 ),
                 ScheduleItem(
                     number: 2,
@@ -236,7 +327,13 @@ enum ScheduleMockData {
                     room: "405",
                     breakAfter: "Перерыв 20 мин",
                     breakEndTime: "14.40",
-                    isReplacement: true
+                    isReplacement: true,
+                    topic: "История права и международные нормы",
+                    description: "На занятии разберем основные принципы международного права, историю их формирования и применение в современных реалиях. Подготовьте конспект лекции за прошлую неделю.",
+                    meetingLink: "https://meet.google.com/abc-defg-hij",
+                    meetingServiceName: "Google Meet",
+                    buildingInfo: nil,
+                    isCancelled: false
                 ),
                 ScheduleItem(
                     number: 3,
@@ -248,7 +345,13 @@ enum ScheduleMockData {
                     room: "12б",
                     breakAfter: nil,
                     breakEndTime: nil,
-                    isReplacement: false
+                    isReplacement: false,
+                    topic: "История права и международные нормы",
+                    description: "На занятии разберем основные принципы международного права, историю их формирования и применение в современных реалиях. Подготовьте конспект лекции за прошлую неделю.",
+                    meetingLink: "https://meet.google.com/abc-defg-hij",
+                    meetingServiceName: "Google Meet",
+                    buildingInfo: nil,
+                    isCancelled: false
                 )
                 
             ]

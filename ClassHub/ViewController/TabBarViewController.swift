@@ -205,20 +205,39 @@ class TabBarViewController: UIViewController {
 
     private func setupViewControllers() {
         let scheduleVC = ScheduleViewController()
-        viewControllers.append(scheduleVC)
+        let scheduleNav = UINavigationController(rootViewController: scheduleVC)
+        
+        scheduleVC.tabBarItem = UITabBarItem(
+            title: "Расписание",
+            image: UIImage(systemName: "calendar"),
+            selectedImage: UIImage(systemName: "calendar.fill")
+        )
+        
+        viewControllers.append(scheduleNav)
         
         let profileVC = UIViewController()
         profileVC.view.backgroundColor = .systemBackground
+        
         let label = UILabel()
         label.text = "Профиль"
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         profileVC.view.addSubview(label)
+        
         NSLayoutConstraint.activate([
             label.centerXAnchor.constraint(equalTo: profileVC.view.centerXAnchor),
             label.centerYAnchor.constraint(equalTo: profileVC.view.centerYAnchor)
         ])
-        viewControllers.append(profileVC)
+        let profileNav = UINavigationController(rootViewController: profileVC)
+        profileNav.navigationBar.isHidden = true
+        
+        profileVC.tabBarItem = UITabBarItem(
+            title: "Мой профиль",
+            image: UIImage(systemName: "person"),
+            selectedImage: UIImage(systemName: "person.fill")
+        )
+        
+        viewControllers.append(profileNav)
     }
 }
 

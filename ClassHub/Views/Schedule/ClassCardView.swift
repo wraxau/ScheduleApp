@@ -2,10 +2,12 @@ import UIKit
 
 final class ClassCardView: UIView {
     
+    var item: ScheduleItem?
+    
     // MARK: - UI Elements
     private let typeBadge: UIButton = {
         let button = UIButton(type: .system)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .medium)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 11, weight: .regular)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.textAlignment = .center
         button.layer.cornerRadius = 10
@@ -18,7 +20,7 @@ final class ClassCardView: UIView {
     private let replacementBadge: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("замена", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .medium)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 11, weight: .regular)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.textAlignment = .center
         button.backgroundColor = UIColor(red: 1.0, green: 141.0/255.0, blue: 40.0/255.0, alpha: 1.0)
@@ -154,6 +156,7 @@ final class ClassCardView: UIView {
     // MARK: - Configuration
     
     private func configure(with item: ScheduleItem) {
+        self.item = item
         numberLabel.text = "\(item.number)"
         
         typeBadge.setTitle(item.type.rawValue.lowercased(), for: .normal)

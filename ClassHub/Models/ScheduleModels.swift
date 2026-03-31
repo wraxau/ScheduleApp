@@ -28,6 +28,15 @@ struct ScheduleItem {
     let breakAfter: String? // например, "перерыв 15 минут"
     let breakEndTime: String?
     let isReplacement: Bool
+    
+    // для детальной информации о занятии
+    let topic: String?
+    let description: String?
+    let meetingLink: String?
+    let meetingServiceName: String?
+    let buildingInfo: String?
+    let isCancelled: Bool
+    
 }
 
 struct DaySchedule {

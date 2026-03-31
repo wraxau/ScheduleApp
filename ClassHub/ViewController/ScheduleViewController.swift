@@ -108,7 +108,6 @@ final class ScheduleViewController: UIViewController {
         generateWeekDates()
         updateUI()
         
-        // Отступ снизу, чтобы контент не перекрывался таббаром
         scrollView.contentInset.bottom = 100
     }
     
@@ -216,6 +215,11 @@ final class ScheduleViewController: UIViewController {
         
         for item in day.items {
             let card = ClassCardView(item: item)
+            
+            card.isUserInteractionEnabled = true
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(cardTapped(_:)))
+            tapGesture.numberOfTapsRequired = 1
+            card.addGestureRecognizer(tapGesture)
             contentStackView.addArrangedSubview(card)
             
             if let breakText = item.breakAfter {
@@ -308,6 +312,19 @@ final class ScheduleViewController: UIViewController {
         currentMonth = Date()
         generateWeekDates()
         updateUI()
+    }
+    
+    @objc private func cardTapped(_ sender: UITapGestureRecognizer) {
+        guard let cardView = sender.view as? ClassCardView,
+              let item = cardView.item else {
+            print(" Ошибка: не удалось получить карточку или данные")
+            return
+        }
+        
+        print(" Переход к предмету: \(item.subject)")
+        
+        let detailVC = ClassDetailViewController(item: item, date: selectedDate)
+        navigationController?.pushViewController(detailVC, animated: true)
     }
 }
 
