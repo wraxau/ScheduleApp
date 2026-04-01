@@ -50,12 +50,12 @@ final class ClassDetailViewController: UIViewController {
     
     private let typeBadge: UIButton = {
         let button = UIButton(type: .system)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 13, weight: .medium)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
         button.setTitleColor(.white, for: .normal)
-        button.layer.cornerRadius = 10
+        button.layer.cornerRadius = 12
         button.clipsToBounds = true
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.contentEdgeInsets = UIEdgeInsets(top: 4, left: 10, bottom: 4, right: 10)
+        button.contentEdgeInsets = UIEdgeInsets(top: 3, left: 15, bottom: 3, right: 15)
         return button
     }()
     
@@ -91,6 +91,21 @@ final class ClassDetailViewController: UIViewController {
         return view
     }()
     
+    private let cancelledButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("отменено", for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
+        button.setTitleColor(.white, for: .normal)
+        button.layer.cornerRadius = 12
+        button.clipsToBounds = true
+        button.backgroundColor  = .red
+        button.isHidden = true
+        button.contentEdgeInsets = UIEdgeInsets(top: 3, left: 15, bottom: 3, right: 15)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        return button
+    }()
+    
     // MARK: - Initialization
     
     init(item: ScheduleItem, date: Date) {
@@ -112,6 +127,7 @@ final class ClassDetailViewController: UIViewController {
         setupHierarchy()
         setupConstraints()
         configureUI()
+        isCancelled()
     }
     
     // MARK: - Setup
@@ -130,11 +146,19 @@ final class ClassDetailViewController: UIViewController {
         navigationItem.leftBarButtonItem?.tintColor = .label
     }
     
+    private func isCancelled() {
+        if item.isCancelled {
+            cancelledButton.isHidden = true
+        } else {
+            cancelledButton.isHidden = false
+        }
+    }
+    
     private func setupHierarchy() {
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
         
-        let subviews = [dateLabel, titleLabel, timeLabel, typeBadge, segmentedControl, teacherCard, locationCard, topicCard]
+        let subviews = [dateLabel, titleLabel, timeLabel, typeBadge, segmentedControl, teacherCard, locationCard, topicCard, cancelledButton]
         subviews.forEach { contentView.addSubview($0) }
     }
     
@@ -161,8 +185,14 @@ final class ClassDetailViewController: UIViewController {
             timeLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
             timeLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             
-            typeBadge.topAnchor.constraint(equalTo: timeLabel.bottomAnchor, constant: 12),
+            typeBadge.topAnchor.constraint(equalTo: timeLabel.bottomAnchor, constant: 8),
             typeBadge.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            typeBadge.heightAnchor.constraint(equalToConstant: 26),
+            
+            cancelledButton.topAnchor.constraint(equalTo: timeLabel.bottomAnchor, constant: 8),
+            cancelledButton.leadingAnchor.constraint(equalTo: typeBadge.trailingAnchor, constant: 10),
+            cancelledButton.widthAnchor.constraint(equalToConstant: 103),
+            cancelledButton.heightAnchor.constraint(equalToConstant: 26),
             
             segmentedControl.topAnchor.constraint(equalTo: typeBadge.bottomAnchor, constant: 20),
             segmentedControl.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),

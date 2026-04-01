@@ -30,21 +30,24 @@ final class EmptyStateView: UIView {
         
         addSubview(stackView)
        
-        let imageView = UIImageView(image: UIImage(systemName: "sun.max.circle.fill"))
-        imageView.tintColor = UIColor.systemBlue.withAlphaComponent(0.6)
+        let imageView = UIImageView(image: UIImage(systemName: "sun.max"))
+        imageView.tintColor = UIColor.systemBlue
         imageView.contentMode = .scaleAspectFit
+        imageView.backgroundColor = UIColor(red: 0.0/255.0, green: 136.0/255.0, blue: 255.0/255.0, alpha: 0.1)
+        imageView.layer.cornerRadius = 25
+        imageView.clipsToBounds = true // Обязательно, чтобы фон был круглым
+        imageView.contentMode = .center
+        // Задаем отступы внутри картинки (top, left, bottom, right)
+        imageView.image = imageView.image?.withAlignmentRectInsets(UIEdgeInsets(top: 0.5, left: 0.5, bottom: 0.5, right: 0.5))
+
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.widthAnchor.constraint(equalToConstant: 50).isActive = true
         imageView.heightAnchor.constraint(equalToConstant: 50).isActive = true
 
         let titleLabel = UILabel()
         titleLabel.text = "Выходной"
-       
-        if let customFont = UIFont(name: "DelaGothicOne-Regular", size: 22) {
-            titleLabel.font = customFont
-        } else {
-            titleLabel.font = UIFont.systemFont(ofSize: 22, weight: .bold)
-        }
+        titleLabel.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
+        
         titleLabel.textColor = .label
         titleLabel.textAlignment = .center
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -52,7 +55,7 @@ final class EmptyStateView: UIView {
         let subtitleLabel = UILabel()
         subtitleLabel.text = "В этот день нет занятий. Отдыхайте и набирайтесь сил :)"
         subtitleLabel.font = UIFont.systemFont(ofSize: 17, weight: .regular)
-        subtitleLabel.textColor = UIColor(red: 60/255, green: 60/255, blue: 67/255, alpha: 0.6)
+        subtitleLabel.textColor = UIColor(red: 60.0/255.0, green: 60.0/255.0, blue: 67.0/255.0, alpha: 0.6)
         subtitleLabel.textAlignment = .center
         subtitleLabel.numberOfLines = 0
         subtitleLabel.lineBreakMode = .byWordWrapping
@@ -67,12 +70,10 @@ final class EmptyStateView: UIView {
         
         subtitleLabel.attributedText = attributedString
         
-        // Add subviews to stack
         stackView.addArrangedSubview(imageView)
         stackView.addArrangedSubview(titleLabel)
         stackView.addArrangedSubview(subtitleLabel)
         
-        // Set custom spacing between elements
         stackView.setCustomSpacing(16, after: imageView)
         stackView.setCustomSpacing(8, after: titleLabel)
         

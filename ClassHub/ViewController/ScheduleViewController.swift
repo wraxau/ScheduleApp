@@ -134,7 +134,7 @@ final class ScheduleViewController: UIViewController {
             titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             
-            monthLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16),
+            monthLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 27),
             monthLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             
             todayButton.centerYAnchor.constraint(equalTo: monthLabel.centerYAnchor),
@@ -334,11 +334,7 @@ extension ScheduleViewController {
     static func makeTitleLabel() -> UILabel {
         let label = UILabel()
         label.text = "Расписание"
-        if let customFont = UIFont(name: "DelaGothicOne-Regular", size: 34) {
-            label.font = customFont
-        } else {
-            label.font = UIFont.systemFont(ofSize: 34, weight: .bold)
-        }
+        label.font = UIFont.systemFont(ofSize: 34, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }
