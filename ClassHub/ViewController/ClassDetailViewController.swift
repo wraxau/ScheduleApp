@@ -33,7 +33,7 @@ final class ClassDetailViewController: UIViewController {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 24, weight: .semibold)
+        label.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
         label.textColor = .label
         label.numberOfLines = 2
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -162,6 +162,8 @@ final class ClassDetailViewController: UIViewController {
         subviews.forEach { contentView.addSubview($0) }
     }
     
+    // MARK: Constraints
+    
     private func setupConstraints() {
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -194,12 +196,12 @@ final class ClassDetailViewController: UIViewController {
             cancelledButton.widthAnchor.constraint(equalToConstant: 103),
             cancelledButton.heightAnchor.constraint(equalToConstant: 26),
             
-            segmentedControl.topAnchor.constraint(equalTo: typeBadge.bottomAnchor, constant: 20),
+            segmentedControl.topAnchor.constraint(equalTo: typeBadge.bottomAnchor, constant: 16),
             segmentedControl.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             segmentedControl.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             segmentedControl.heightAnchor.constraint(equalToConstant: 36),
             
-            teacherCard.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 20),
+            teacherCard.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 16),
             teacherCard.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             teacherCard.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             teacherCard.heightAnchor.constraint(equalToConstant: 84),
@@ -208,13 +210,15 @@ final class ClassDetailViewController: UIViewController {
             locationCard.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             locationCard.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             
-            topicCard.topAnchor.constraint(equalTo: locationCard.bottomAnchor, constant: 24),
+            topicCard.topAnchor.constraint(equalTo: locationCard.bottomAnchor, constant: 32),
             topicCard.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             topicCard.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             topicCard.heightAnchor.constraint(greaterThanOrEqualToConstant: 100),
             topicCard.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
     }
+    
+    // MARK: Configure UI
     
     private func configureUI() {
         let formatter = DateFormatter()
@@ -223,8 +227,7 @@ final class ClassDetailViewController: UIViewController {
         dateLabel.text = formatter.string(from: date).capitalized
         
         titleLabel.text = item.subject
-        timeLabel.text = "\(item.startTime) – \(item.endTime)"
-        
+        timeLabel.text = "􀐫 \(item.startTime) – \(item.endTime)"
         typeBadge.setTitle(item.type.rawValue, for: .normal)
         typeBadge.backgroundColor = item.type.color
         
@@ -232,6 +235,8 @@ final class ClassDetailViewController: UIViewController {
         setupLocationCard()
         setupTopicCard()
     }
+    
+    // MARK: Teacher Card
     
     private func setupTeacherCard() {
         teacherCard.backgroundColor = .systemGray6
@@ -267,7 +272,7 @@ final class ClassDetailViewController: UIViewController {
         
         let titleLabel = UILabel()
         titleLabel.text = "Преподаватель"
-        titleLabel.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+        titleLabel.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         titleLabel.textColor = .secondaryLabel
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         
@@ -292,7 +297,7 @@ final class ClassDetailViewController: UIViewController {
         ])
     }
     
-    // MARK: Location card configuration
+    // MARK: Location Card
     
     private func setupLocationCard() {
         
@@ -320,7 +325,7 @@ final class ClassDetailViewController: UIViewController {
         }()
         
         let titleLabel = UILabel()
-        titleLabel.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+        titleLabel.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         titleLabel.textColor = .secondaryLabel
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         
@@ -343,7 +348,7 @@ final class ClassDetailViewController: UIViewController {
                 btn.setTitle("Перейти", for: .normal)
                 btn.backgroundColor = .systemBlue
                 btn.setTitleColor(.white, for: .normal)
-                btn.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
+                btn.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .medium)
                 btn.layer.cornerRadius = 12
                 btn.translatesAutoresizingMaskIntoConstraints = false
                 btn.addTarget(self, action: #selector(joinMeetingTapped), for: .touchUpInside)
@@ -423,7 +428,7 @@ final class ClassDetailViewController: UIViewController {
         }
     }
     
-    // MARK: Topic Card Configuration
+    // MARK: Topic Card
     
     private func setupTopicCard() {
         topicCard.backgroundColor = .systemGray6
