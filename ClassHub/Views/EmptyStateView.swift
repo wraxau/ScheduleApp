@@ -35,9 +35,8 @@ final class EmptyStateView: UIView {
         imageView.contentMode = .scaleAspectFit
         imageView.backgroundColor = UIColor(red: 0.0/255.0, green: 136.0/255.0, blue: 255.0/255.0, alpha: 0.1)
         imageView.layer.cornerRadius = 25
-        imageView.clipsToBounds = true // Обязательно, чтобы фон был круглым
+        imageView.clipsToBounds = true
         imageView.contentMode = .center
-        // Задаем отступы внутри картинки (top, left, bottom, right)
         imageView.image = imageView.image?.withAlignmentRectInsets(UIEdgeInsets(top: 0.5, left: 0.5, bottom: 0.5, right: 0.5))
 
         imageView.translatesAutoresizingMaskIntoConstraints = false

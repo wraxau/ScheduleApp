@@ -36,7 +36,8 @@ struct ScheduleItem {
     let meetingServiceName: String?
     let buildingInfo: String?
     let isCancelled: Bool
-    
+    let materials: [Material]?
+    let tasks: String?
 }
 
 struct DaySchedule {
@@ -45,4 +46,16 @@ struct DaySchedule {
     let isWeekend: Bool
 }
 
+struct Material {
+    let name: String?
+    let link: String?
+    let size: String?
+    let type: String?
+}
 
+// чтобы можно было загрузить файл с заданием
+struct AttachedFile {
+    let name: String
+    let size: String
+    let type: String // "jpg", "pdf" и т.д.
+}

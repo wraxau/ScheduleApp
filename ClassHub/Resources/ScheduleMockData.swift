@@ -46,43 +46,55 @@ enum ScheduleMockData {
                     meetingLink: "https://meet.google.com/abc-defg-hij",
                     meetingServiceName: "Google Meet",
                     buildingInfo: nil,
-                    isCancelled: false
+                    isCancelled: false,
+                    materials: [
+                        Material(name: "Статья", link: nil, size: "17 KB", type: "pdf")
+                    ],
+                    tasks: nil
                 ),
                 ScheduleItem(
                     number: 2,
                     type: .seminar,
                     startTime: "12:00",
                     endTime: "13:45",
-                    subject: "Государственное регулирование конституционной деятельности",
+                    subject: "Программировнаие на Java",
                     teacher: "Михайлов Иван Дмитриевич",
                     room: "Онлайн",
                     breakAfter: "Перерыв 1.15 мин",
                     breakEndTime: "15.00",
                     isReplacement: true,
-                    topic: "История права и международные нормы",
-                    description: "На занятии разберем основные принципы международного права, историю их формирования и применение в современных реалиях. Подготовьте конспект лекции за прошлую неделю.",
+                    topic: "История языка Java",
+                    description: "Познакомимся с основами Java. Узнаем, как появился этот язык, и поговорим о его практическом применении",
                     meetingLink: "https://meet.google.com/abc-defg-hij",
                     meetingServiceName: "Zoom",
                     buildingInfo: nil,
-                    isCancelled: false
+                    isCancelled: false,
+                    materials: nil,
+                    tasks: "Необходимо написать приложение, которое будет"
+                    
                 ),
                 ScheduleItem(
                     number: 3,
-                    type: .lecture,
+                    type: .seminar,
                     startTime: "15:00",
                     endTime: "16:45",
-                    subject: "Теория вероятностей",
+                    subject: "Моделирование бизнес-процессов",
                     teacher: "Смирнов Алексей Иванович",
                     room: "Онлайн",
                     breakAfter: nil,
                     breakEndTime: nil,
                     isReplacement: false,
-                    topic: "История права и международные нормы",
-                    description: "На занятии разберем основные принципы международного права, историю их формирования и применение в современных реалиях. Подготовьте конспект лекции за прошлую неделю.",
+                    topic: "Нотация BPMN",
+                    description: "Познакомимся с программой Storm BPMN, рассмотрим кейсы и приложенного файла.",
                     meetingLink: "https://meet.google.com/abc-defg-hij",
                     meetingServiceName: "Zoom",
                     buildingInfo: nil,
-                    isCancelled: false
+                    isCancelled: false,
+                    materials: [
+                        Material(name: "Кейсы_1.pdf", link: nil, size: "95 KB", type: "pdf"),
+                        Material(name: "Презентация_как_работать_в_StormBPMN.pptx", link: nil, size: "450 KB", type: ".pptx")
+                    ],
+                    tasks: nil
                 ),
                 
                 ScheduleItem(
@@ -90,18 +102,20 @@ enum ScheduleMockData {
                     type: .lecture,
                     startTime: "16:45",
                     endTime: "18:15",
-                    subject: "Архитектура ОС",
+                    subject: "Оптимизация и исследование операций",
                     teacher: "Смирнов Алексей Иванович",
                     room: "Онлайн",
                     breakAfter: nil,
                     breakEndTime: nil,
                     isReplacement: false,
-                    topic: "История права и международные нормы",
-                    description: "На занятии разберем основные принципы международного права, историю их формирования и применение в современных реалиях. Подготовьте конспект лекции за прошлую неделю.",
+                    topic: "Задачи на линейное программирование",
+                    description: "Будем решать задачи на линейное программировнаие.",
                     meetingLink: "https://meet.google.com/abc-defg-hij",
                     meetingServiceName: "Телемост",
                     buildingInfo: nil,
-                    isCancelled: true
+                    isCancelled: true,
+                    materials: nil,
+                    tasks: nil
                 )
             ]
         case 1:
@@ -122,7 +136,11 @@ enum ScheduleMockData {
                     meetingLink: nil,
                     meetingServiceName: nil,
                     buildingInfo: "Корпус 1, этаж 3",
-                    isCancelled: false
+                    isCancelled: false,
+                    materials: [
+                        Material(name: "Статья", link: nil, size: "17 KB", type: "pdf")
+                    ],
+                    tasks: nil
                 ),
                 ScheduleItem(
                     number: 2,
@@ -140,7 +158,11 @@ enum ScheduleMockData {
                     meetingLink: nil,
                     meetingServiceName: nil,
                     buildingInfo: "Корпус 1, этаж 4",
-                    isCancelled: false
+                    isCancelled: false,
+                    materials: [
+                        Material(name: "Статья", link: nil, size: "17 KB", type: "pdf")
+                    ],
+                    tasks: nil
                 ),
                 ScheduleItem(
                     number: 3,
@@ -158,7 +180,11 @@ enum ScheduleMockData {
                     meetingLink: nil,
                     meetingServiceName: nil,
                     buildingInfo: "Корпус 1, 1 этаж",
-                    isCancelled: true
+                    isCancelled: true,
+                    materials: [
+                        Material(name: "Статья", link: nil, size: "17 KB", type: "pdf")
+                    ],
+                    tasks: nil
                 ),
                 
                 ScheduleItem(
@@ -177,7 +203,11 @@ enum ScheduleMockData {
                     meetingLink: nil,
                     meetingServiceName: nil,
                     buildingInfo: "Корпус 5, этаж 1",
-                    isCancelled: false
+                    isCancelled: false,
+                    materials: [
+                        Material(name: "Статья", link: nil, size: "17 KB", type: "pdf")
+                    ],
+                    tasks: nil
                 )
             ]
         case 2:
@@ -198,7 +228,11 @@ enum ScheduleMockData {
                     meetingLink: "https://meet.google.com/abc-defg-hij",
                     meetingServiceName: "Google Meet",
                     buildingInfo: nil,
-                    isCancelled: false
+                    isCancelled: false,
+                    materials: [
+                        Material(name: "Статья", link: nil, size: "17 KB", type: "pdf")
+                    ],
+                    tasks: nil
                 ),
                 ScheduleItem(
                     number: 2,
@@ -207,7 +241,7 @@ enum ScheduleMockData {
                     endTime: "10:50",
                     subject: "Архитектура компьютера и ОС",
                     teacher: "Жданов Михаил Федорович",
-                    room: "202",
+                    room: "Онлайн",
                     breakAfter: nil,
                     breakEndTime: nil,
                     isReplacement: true,
@@ -216,7 +250,11 @@ enum ScheduleMockData {
                     meetingLink: "https://meet.google.com/abc-defg-hij",
                     meetingServiceName: "Google Meet",
                     buildingInfo: nil,
-                    isCancelled: false
+                    isCancelled: false,
+                    materials: [
+                        Material(name: "Статья", link: nil, size: "17 KB", type: "pdf")
+                    ],
+                    tasks: nil
                 ),
             ]
             
@@ -238,7 +276,11 @@ enum ScheduleMockData {
                     meetingLink: "https://meet.google.com/abc-defg-hij",
                     meetingServiceName: "Google Meet",
                     buildingInfo: nil,
-                    isCancelled: false
+                    isCancelled: false,
+                    materials: [
+                        Material(name: "Статья", link: nil, size: "17 KB", type: "pdf")
+                    ],
+                    tasks: nil
                 ),
                 ScheduleItem(
                     number: 2,
@@ -247,7 +289,7 @@ enum ScheduleMockData {
                     endTime: "16:00",
                     subject: "Государственное регулирование конституционной деятельности",
                     teacher: "Мальцев Дмитрий Викторович",
-                    room: "104",
+                    room: "Онлайн",
                     breakAfter: "Перерыв 20 мин",
                     breakEndTime: "16.20",
                     isReplacement: false,
@@ -256,25 +298,33 @@ enum ScheduleMockData {
                     meetingLink: "https://meet.google.com/abc-defg-hij",
                     meetingServiceName: "Google Meet",
                     buildingInfo: nil,
-                    isCancelled: false
+                    isCancelled: false,
+                    materials: [
+                        Material(name: "Статья", link: "https:\\gosReg.ru", size: nil, type: nil)
+                    ],
+                    tasks: nil
                 ),
                 ScheduleItem(
                     number: 3,
-                    type: .lecture,
+                    type: .seminar,
                     startTime: "15:00",
                     endTime: "16:45",
                     subject: "Теория вероятностей",
                     teacher: "Смирнов Алексей Иванович",
-                    room: "12б",
+                    room: "308",
                     breakAfter: nil,
                     breakEndTime: nil,
                     isReplacement: false,
-                    topic: "История права и международные нормы",
-                    description: "На занятии разберем основные принципы международного права, историю их формирования и применение в современных реалиях. Подготовьте конспект лекции за прошлую неделю.",
-                    meetingLink: "https://meet.google.com/abc-defg-hij",
-                    meetingServiceName: "Google Meet",
-                    buildingInfo: nil,
-                    isCancelled: false
+                    topic: "Формула Бернулли",
+                    description: "Будет решать задачи на формулу Бернулли. Те, кому не хватает оценок - смогут ответить у доски.",
+                    meetingLink: nil,
+                    meetingServiceName: nil,
+                    buildingInfo: "Корпус 4, этаж 3",
+                    isCancelled: false,
+                    materials: [
+                        Material(name: "Задачи_5_семинар.jpeg", link: nil, size: "30 KB", type: "jpeg")
+                    ],
+                    tasks: nil
                 ),
                 
                 ScheduleItem(
@@ -284,16 +334,20 @@ enum ScheduleMockData {
                     endTime: "18:15",
                     subject: "Архитектура ОС",
                     teacher: "Смирнов Алексей Иванович",
-                    room: "12б",
+                    room: "106",
                     breakAfter: nil,
                     breakEndTime: nil,
                     isReplacement: false,
-                    topic: "История права и международные нормы",
-                    description: "На занятии разберем основные принципы международного права, историю их формирования и применение в современных реалиях. Подготовьте конспект лекции за прошлую неделю.",
-                    meetingLink: "https://meet.google.com/abc-defg-hij",
-                    meetingServiceName: "Google Meet",
-                    buildingInfo: nil,
-                    isCancelled: false
+                    topic: "ОС Linux",
+                    description: "На занятии познакомимся с операционной системой Linux. Рассмотрим, когда ее удобно использовать, как настроить под себы и многое другое.",
+                    meetingLink: nil,
+                    meetingServiceName: nil,
+                    buildingInfo: "Копус 2, этаж 1",
+                    isCancelled: false,
+                    materials: [
+                        Material(name: "Статья", link: nil, size: "17 KB", type: "pdf")
+                    ],
+                    tasks: nil
                 )
             ]
             
@@ -315,7 +369,11 @@ enum ScheduleMockData {
                     meetingLink: "https://meet.google.com/abc-defg-hij",
                     meetingServiceName: "Google Meet",
                     buildingInfo: nil,
-                    isCancelled: false
+                    isCancelled: false,
+                    materials: [
+                        Material(name: "Учебник 'Программировнаие на python.pdf'", link: nil, size: "389 KB", type: "pdf")
+                    ],
+                    tasks: nil
                 ),
                 ScheduleItem(
                     number: 2,
@@ -330,10 +388,14 @@ enum ScheduleMockData {
                     isReplacement: true,
                     topic: "История права и международные нормы",
                     description: "На занятии разберем основные принципы международного права, историю их формирования и применение в современных реалиях. Подготовьте конспект лекции за прошлую неделю.",
-                    meetingLink: "https://meet.google.com/abc-defg-hij",
-                    meetingServiceName: "Google Meet",
-                    buildingInfo: nil,
-                    isCancelled: false
+                    meetingLink: nil,
+                    meetingServiceName: nil,
+                    buildingInfo: "Корпус 6Б, этаж 4",
+                    isCancelled: false,
+                    materials: [
+                        Material(name: "Учебник 'Программировнаие на python.pdf'", link: nil, size: "389 KB", type: "pdf")
+                    ],
+                    tasks: nil
                 ),
                 ScheduleItem(
                     number: 3,
@@ -342,7 +404,7 @@ enum ScheduleMockData {
                     endTime: "16:00",
                     subject: "Оптимизация и исследование операций",
                     teacher: "Смирнов Алексей Иванович",
-                    room: "12б",
+                    room: "Онлайн",
                     breakAfter: nil,
                     breakEndTime: nil,
                     isReplacement: false,
@@ -351,7 +413,9 @@ enum ScheduleMockData {
                     meetingLink: "https://meet.google.com/abc-defg-hij",
                     meetingServiceName: "Google Meet",
                     buildingInfo: nil,
-                    isCancelled: false
+                    isCancelled: false,
+                    materials: nil,
+                    tasks: nil
                 )
                 
             ]
