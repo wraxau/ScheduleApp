@@ -232,14 +232,14 @@ final class ClassDetailViewController: UIViewController {
     
     // Кнопка "Сдать задание"
     private let submitButton: UIButton = {
-        let btn = UIButton(type: .system)
-        btn.setTitle("Сдать задание", for: .normal)
-        btn.backgroundColor = .systemBlue
-        btn.setTitleColor(.white, for: .normal)
-        btn.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
-        btn.layer.cornerRadius = 16
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        return btn
+        let button = UIButton(type: .system)
+        button.setTitle("Сдать задание", for: .normal)
+        button.backgroundColor = .systemBlue
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
+        button.layer.cornerRadius = 18
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
     }()
     
     // MARK: - Initialization
@@ -272,6 +272,8 @@ final class ClassDetailViewController: UIViewController {
         taskContainer.isHidden = true
         
         segmentedControl.addTarget(self, action: #selector(segmentChanged(_:)), for: .valueChanged)
+        
+        scrollView.contentInset.bottom = 100
     }
     
     override func viewDidLayoutSubviews() {
@@ -438,10 +440,17 @@ final class ClassDetailViewController: UIViewController {
             filesStackView.isHidden = true
             attachButton.isHidden = false
             submitButton.isEnabled = false
-            submitButton.alpha = 0.5
+            submitButton.setTitleColor(.secondaryLabel, for: .normal)
+            submitButton.backgroundColor  = .secondarySystemBackground
+            submitButton.layer.shadowColor = UIColor.black.cgColor
+            submitButton.layer.shadowOpacity = 0.2
+            submitButton.layer.shadowOffset = CGSize(width: 0, height: 2)
+            submitButton.layer.shadowRadius = 4
         } else {
             filesStackView.isHidden = false
             attachButton.isHidden = false
+            submitButton.setTitleColor(.white, for: .normal)
+            submitButton.backgroundColor  = .systemBlue
             
             for file in attachedFiles {
                 let fileView = FileItemView(file: file)

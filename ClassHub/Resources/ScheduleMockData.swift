@@ -4,24 +4,23 @@ enum ScheduleMockData {
     static func generateSampleSchedule() -> [Date: DaySchedule] {
         let calendar = Calendar.current
         let today = Date()
+        let startOfWeek = calendar.date(from: calendar.dateComponents([.yearForWeekOfYear, .weekOfYear], from: today))!
         var scheduleData: [Date: DaySchedule] = [:]
         
         for dayOffset in 0..<7 {
-            guard let date = calendar.date(byAdding: .day, value: dayOffset, to: today) else {continue}
+            guard let date = calendar.date(byAdding: .day, value: dayOffset, to: startOfWeek) else { continue }
             let startOfDay = calendar.startOfDay(for: date)
             let weekday = calendar.component(.weekday, from: date)
-            let isWeekday = (weekday == 1 || weekday == 7) // так возвращает Calendar
+            let isWeekend = (weekday == 1 || weekday == 7) // 1 = воскресенье, 7 = суббота
+
             var items: [ScheduleItem] = []
-            
-            if !isWeekday {
+            if !isWeekend {
                 items = getItemsForDay(offset: dayOffset, weekday: weekday)
             }
-            
             scheduleData[startOfDay] = DaySchedule(
-                date: startOfDay, items: items, isWeekend: isWeekday
+                date: startOfDay, items: items, isWeekend: isWeekend
             )
         }
-        
         return scheduleData
     }
     
@@ -50,7 +49,7 @@ enum ScheduleMockData {
                     materials: [
                         Material(name: "Статья", link: nil, size: "17 KB", type: "pdf")
                     ],
-                    tasks: nil
+                    tasks: "Необходимо выполнить задание с прошлой лекции"
                 ),
                 ScheduleItem(
                     number: 2,
