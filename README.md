@@ -19,12 +19,12 @@
 
 | Экран | Изображение |
 |-------|-------------|
-| **Расписание** | <img src="Screenshots/1.png" width="180" alt="Главное расписание"> |
-| **Детали занятия** | <img src="Screenshots/2.png" width="180" alt="Карточка занятия"> |
-| **Редактирование** | <img src="Screenshots/3.png" width="180" alt="Изменение данных"> |
-| **Настройки** | <img src="Screenshots/4.png" width="180" alt="Параметры приложения"> |
-| **Статистика** | <img src="Screenshots/5.png" width="180" alt="Прогресс обучения"> |
-| **Выходной день** | <img src="Screenshots/6.png" width="180" alt="Расписание в выходной"> |
+| **Расписание** | <img src="Screenshots/1.png" width="250" alt="Главное расписание"> |
+| **Детали занятия** | <img src="Screenshots/2.png" width="250" alt="Карточка занятия"> |
+| **Детали занятия** | <img src="Screenshots/3.png" width="250" alt="Изменение данных"> |
+| **Детали занятия** | <img src="Screenshots/4.png" width="250" alt="Параметры приложения"> |
+| **Детали занятия** | <img src="Screenshots/5.png" width="250" alt="Прогресс обучения"> |
+| **Выходной день** | <img src="Screenshots/6.png" width="250" alt="Расписание в выходной"> |
 ## ✨ Фичи
 
 - 🎨 Чистый интерфейс на **UIKit** (программная вёрстка)
