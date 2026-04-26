@@ -6,7 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		2285A5462F9E164D00215410 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2285A5322F9E164D00215410 /* README.md */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		2285A5322F9E164D00215410 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		22FB0A8E2F6B173B00F00093 /* ClassHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClassHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -21,6 +26,11 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		2285A5472F9E1A7900215410 /* Screenshots */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Screenshots;
+			sourceTree = "<group>";
+		};
 		22FB0A902F6B173B00F00093 /* ClassHub */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
@@ -45,6 +55,8 @@
 		22FB0A852F6B173B00F00093 = {
 			isa = PBXGroup;
 			children = (
+				2285A5322F9E164D00215410 /* README.md */,
+				2285A5472F9E1A7900215410 /* Screenshots */,
 				22FB0A902F6B173B00F00093 /* ClassHub */,
 				22FB0A8F2F6B173B00F00093 /* Products */,
 			);
@@ -74,6 +86,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				2285A5472F9E1A7900215410 /* Screenshots */,
 				22FB0A902F6B173B00F00093 /* ClassHub */,
 			);
 			name = ClassHub;
@@ -122,6 +135,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2285A5462F9E164D00215410 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
